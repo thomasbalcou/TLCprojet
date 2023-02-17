@@ -17,7 +17,7 @@ RUN npm run build
 FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /app/dist/front /usr/share/nginx/html
+COPY --from=build /app/dist/tlcfront /usr/share/nginx/html
 
 #docker build -t front .
 #docker run -d -p 8080:80 front
