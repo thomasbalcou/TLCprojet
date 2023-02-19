@@ -20,4 +20,4 @@ FROM nginx:latest
 COPY --from=build /app/dist/tlcfront /usr/share/nginx/html
 
 #docker build -t front .
-#docker run -d -p 8080:80 front
+#docker run -d -p 80:80 front
