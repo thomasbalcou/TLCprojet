@@ -9,8 +9,8 @@ before_install:
 
 script:
   # Build Docker images for front and api
-  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd api && mvn package -Dquarkus.package.type=fast-jar"
-  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd api && docker build -f src/main/docker/Dockerfile.fast-jar -t quarkus/code-with-quarkus-fast-jar ."
-  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd front && docker build -t front ."
+  - sshpass -p 'pennfank' ssh zprojet@148.60.11.229 "cd /TLCprojet/api && mvn package -Dquarkus.package.type=fast-jar"
+  - sshpass -p 'pennfank' ssh zprojet@148.60.11.229 "cd /TLCprojet/api && docker build -f src/main/docker/Dockerfile.fast-jar -t quarkus/code-with-quarkus-fast-jar ."
+  - sshpass -p 'pennfank' ssh zprojet@148.60.11.229 "cd /TLCprojet/front && docker build -t front ."
   # Connect to remote server and run Docker Compose
-  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "docker-compose up -d"
+  - sshpass -p 'pennfank' ssh zprojet@148.60.11.229 "cd TLCprojet && docker-compose up -d"
