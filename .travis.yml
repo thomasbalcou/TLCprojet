@@ -1,0 +1,16 @@
+language: generic
+services:
+  - docker
+
+before_install:
+  # Install SSH client
+  - apt-get update
+  - apt-get install -y sshpass
+
+script:
+  # Build Docker images for front and api
+  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd api && mvn package -Dquarkus.package.type=fast-jar"
+  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd api && docker build -f src/main/docker/Dockerfile.fast-jar -t quarkus/code-with-quarkus-fast-jar ."
+  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "cd front && docker build -t front ."
+  # Connect to remote server and run Docker Compose
+  - sshpass -p 'pennfank' scp zprojet@148.60.11.229 "docker-compose up -d"
