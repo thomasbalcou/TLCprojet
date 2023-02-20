@@ -24,3 +24,19 @@ Déploiement
 ## Tache 4
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/DiagrammeDeploiement.png)
+
+## Tache 5
+
+J'ai utilisé travis ci pour le deploiement automatisé en construisant un script qui:  
+
+commence par installer le client SSH sur la machine de déploiement. Ensuite, il crée une sauvegarde de la version actuelle du projet sur le serveur distant, en créant une archive tar gz dans le dossier home de l'utilisateur distant.
+
+Ensuite, le script clone la dernière version du projet à partir du dépôt GitHub en utilisant la commande git clone.  
+
+Le script construit ensuite les images Docker pour la partie front et API de l'application.  
+
+Enfin, le script lance Docker Compose pour exécuter l'application dans un conteneur Docker.  
+
+ Si une erreur se produit lors de l'exécution de l'une des commandes, le script restaure la sauvegarde du projet précédent à partir de l'archive tar gz en utilisant la commande tar.  
+ 
+Le script utilise une variable d'environnement $PASSWORD définie dans Travis ci pour stocker le mot de passe requis pour se connecter au serveur distant.  
