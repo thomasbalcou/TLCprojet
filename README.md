@@ -19,8 +19,7 @@ Enfin, le troisième serveur, "pad.tlc.fr", redirigera toutes les requêtes vers
 
 ## Tache 3
 
-Déploiement
-
+Pour deployer l'application. Il faut d'abord installer git et maven sur la machine
 ## Tache 4
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/DiagrammeDeploiement.png)
@@ -29,7 +28,7 @@ Déploiement
 
 J'ai utilisé travis ci pour le deploiement automatisé en construisant un script qui:  
 
-commence par installer le client SSH sur la machine de déploiement. Ensuite, il crée une sauvegarde de la version actuelle du projet sur le serveur distant, en créant une archive tar gz dans le dossier home de l'utilisateur distant.
+Commence par installer le client SSH sur la machine de déploiement. Ensuite, il crée une sauvegarde de la version actuelle du projet sur le serveur distant, en créant une archive tar gz dans le dossier home de l'utilisateur distant.  
 
 Ensuite, le script clone la dernière version du projet à partir du dépôt GitHub en utilisant la commande git clone.  
 
