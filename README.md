@@ -23,6 +23,8 @@ Pour deployer l'application. Il faut d'abord installer git et maven sur la machi
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/captureVM.png)
 
+![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/captureVM2.png)
+
 ## Tache 4
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/DiagrammeDeploiement.png)
