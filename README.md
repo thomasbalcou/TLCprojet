@@ -9,17 +9,20 @@ Le repository contient aussi un DockerCompose à la racine pour executer tout le
 
 ## Tache 2
 
-Le fichier de configuration nginx et à la racine du projet. Ce fichier de configuration NGINX définit trois serveurs en écoutant sur le port 80. Chacun de ces serveurs correspond à un nom de domaine différent, "localhost doodle.tlc.fr", "myadmin.tlc.fr", et "pad.tlc.fr".  
+Le fichier de configuration nginx et à la racine du projet. Ce fichier de configuration NGINX définit trois serveurs en écoutant sur le port 80. Chacun de ces serveurs correspond à un nom de domaine différent, ""ThomasBaTLC" et "doodle.balcou.reverse-team.fr"", "myadmin.balcou.reverse-team.fr", et"pad.balcou.reverse-team.fr".  
 
-Pour le premier serveur, "localhost doodle.tlc.fr", la requête pour l'URI "/api" sera acheminée vers l'adresse "http://api:8080/api". Les autres requêtes seront servies à partir du répertoire "/usr/share/nginx/html", avec un fichier d'index par défaut "index.html" ou "index.htm". Les erreurs de type 500, 502, 503, 504 seront redirigées vers le fichier "50x.html".  
+Pour le premier serveur, "ThomasBaTLC" et "doodle.balcou.reverse-team.fr", la requête pour l'URI "/api" sera acheminée vers l'adresse "http://api:8080/api". Les autres requêtes seront servies à partir du répertoire "/usr/share/nginx/html", avec un fichier d'index par défaut "index.html" ou "index.htm". Les erreurs de type 500, 502, 503, 504 seront redirigées vers le fichier "50x.html".  
 
-Le second serveur, "myadmin.tlc.fr", redirigera toutes les requêtes vers "http://phpmyadmin:80". Les erreurs seront gérées de la même manière que pour le premier serveur.  
+Le second serveur, "myadmin.balcou.reverse-team.fr", redirigera toutes les requêtes vers "http://phpmyadmin:80". Les erreurs seront gérées de la même manière que pour le premier serveur.  
 
-Enfin, le troisième serveur, "pad.tlc.fr", redirigera toutes les requêtes vers "http://etherpad:9001". Des en-têtes supplémentaires seront ajoutés à ces requêtes pour gérer la mise à niveau et la version HTTP. Les erreurs seront gérées de la même manière que pour les autres serveurs.
+Enfin, le troisième serveur, "pad.balcou.reverse-team.fr", redirigera toutes les requêtes vers "http://etherpad:9001". Des en-têtes supplémentaires seront ajoutés à ces requêtes pour gérer la mise à niveau et la version HTTP. Les erreurs seront gérées de la même manière que pour les autres serveurs.
 
 ## Tache 3
 
-Pour deployer l'application. Il faut d'abord installer git et maven sur la machine
+Pour deployer l'application. Il faut d'abord installer git et maven sur la machine. Puis clonner le repo git. Ensuite lancer le docker compose et l'application est disponible sur la VM. je n'ai pour l'instant pas reussi à faire fonctionner en fonction des sous domaine la page me renvoyant "Reason: DNS resolve failed".  
+
+![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/captureVM.png)
+
 ## Tache 4
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/DiagrammeDeploiement.png)

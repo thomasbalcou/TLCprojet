@@ -53,11 +53,11 @@ services:
       - MYSQL_USER=tlc
       - MYSQL_PASSWORD=tlc
     #chercher le scipt sql d'initialisation
-    volumes:
-      - ./api/src/main/resources/db/migration:/docker-entrypoint-initdb.d
-    command: [
-      '--init-file=/docker-entrypoint-initdb.d/V1__Initial_version.sql'
-    ]
+    #volumes:
+    #  - ./api/src/main/resources/db/migration:/docker-entrypoint-initdb.d
+    #command: [
+    #  '--init-file=/docker-entrypoint-initdb.d/V1__Initial_version.sql'
+    #]
 #mail
   mail:
     container_name: mail
