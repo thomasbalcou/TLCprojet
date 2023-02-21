@@ -15,11 +15,11 @@ Pour le premier serveur, "ThomasBaTLC" et "doodle.balcou.reverse-team.fr", la re
 
 Le second serveur, "myadmin.balcou.reverse-team.fr", redirigera toutes les requêtes vers "http://phpmyadmin:80". Les erreurs seront gérées de la même manière que pour le premier serveur.  
 
-Enfin, le troisième serveur, "pad.balcou.reverse-team.fr", redirigera toutes les requêtes vers "http://etherpad:9001". Des en-têtes supplémentaires seront ajoutés à ces requêtes pour gérer la mise à niveau et la version HTTP. Les erreurs seront gérées de la même manière que pour les autres serveurs.
+Enfin, le troisième serveur, "pad.balcou.reverse-team.fr", redirigera toutes les requêtes vers "http://etherpad:9001". Des en-têtes supplémentaires seront ajoutés à ces requêtes pour gérer la mise à niveau et la version HTTP. Les erreurs seront gérées de la même manière que pour les autres serveurs.  
 
 ## Tache 3
 
-Pour deployer l'application. Il faut d'abord installer git et maven sur la machine. Puis clonner le repo git. Ensuite lancer le docker compose et l'application est disponible sur la VM. je n'ai pour l'instant pas reussi à faire fonctionner en fonction des sous domaine la page me renvoyant "Reason: DNS resolve failed" pour les sous domaines.  
+Pour deployer l'application. Il faut d'abord installer git et maven sur la machine. Puis clonner le repo git. Ensuite lancer le docker compose et l'application est disponible sur la VM. je n'ai pour l'instant pas reussi à faire fonctionner en fonction des sous-domaine.  
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/captureVM.png)
 
