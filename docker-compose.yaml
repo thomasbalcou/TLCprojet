@@ -27,7 +27,6 @@ services:
     environment:
       - QUARKUS_DATASOURCE_JDBC_URL=jdbc:mysql://db:3306/tlc?useUnicode=true&serverTimezone=Europe/Paris
       - doodle.internalPadUrl=http://etherpad:9001/
-      #- doodle.externalPadUrl=http://etherpad.tlc.fr:8090/
     ports:
       - 8080:8080
 #phpmyadmin
@@ -54,11 +53,11 @@ services:
       - MYSQL_USER=tlc
       - MYSQL_PASSWORD=tlc
     #chercher le scipt sql d'initialisation
-    #volumes:
-    #  - ./api/src/main/resources/db/migration:/docker-entrypoint-initdb.d
-    #command: [
-    #  '--init-file=/docker-entrypoint-initdb.d/V1__Initial_version.sql'
-    #]
+    volumes:
+      - ./api/src/main/resources/db/migration:/docker-entrypoint-initdb.d
+    command: [
+      '--init-file=/docker-entrypoint-initdb.d/V1__Initial_version.sql'
+    ]
 #mail
   mail:
     container_name: mail
