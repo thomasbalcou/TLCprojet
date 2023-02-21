@@ -8,7 +8,6 @@ before_install:
   - apt-get install -y sshpass
 
 script:
- script:
   # Backup current project
   - sshpass -p $PASSWORD ssh zprojet@148.60.11.229 "tar czvf TLCprojet_backup.tar.gz /TLCprojet"
   # Clone latest version of project from GitHub
@@ -18,7 +17,7 @@ script:
   - sshpass -p $PASSWORD ssh zprojet@148.60.11.229 "cd /TLCprojet/api && docker build -f src/main/docker/Dockerfile.fast-jar -t quarkus/code-with-quarkus-fast-jar . || (echo 'Build failed'; sshpass -p $PASSWORD ssh zprojet@148.60.11.229 'tar xzvf TLCprojet_backup.tar.gz -C / && echo Restored project from backup'))"
   - sshpass -p $PASSWORD ssh zprojet@148.60.11.229 "cd /TLCprojet/front && docker build -t front . || (echo 'Build failed'; sshpass -p $PASSWORD ssh zprojet@148.60.11.229 'tar xzvf TLCprojet_backup.tar.gz -C / && echo Restored project from backup'))"
   # Connect to remote server and run Docker Compose
-  - sshpass -p $PASSWORD ssh zprojet@148.60.11.229 "cd TLCprojet && docker-compose up -d || (echo 'Docker Compose failed'; sshpass -p $PASSWORD ssh zprojet@148.60.11.229 'tar xzvf TLCprojet_backup.tar.gz -C / && echo Restored project from backup'))"
+  - sshpass -p $PASSWORD ssh zprojet@148.60.11.229 "cd TLCprojet && docker-compose up -d || (echo 'Docker Compose failed'; sshpass -p $PASSWORD ssh zprojet@148.60.11.229 'tar xzvf TLCprojet_backup.tar.gz -C / && docker-compose up -d / && echo Restored project from backup'))"
 
 
 
