@@ -19,7 +19,7 @@ Enfin, le troisième serveur, "pad.balcou.reverse-team.fr", redirigera toutes le
 
 ## Tache 3
 
-Pour deployer l'application. Il faut d'abord installer git et maven sur la machine. Puis clonner le repo git. Ensuite lancer le docker compose et l'application est disponible sur la VM. je n'ai pour l'instant pas reussi à faire fonctionner en fonction des sous-domaine.  
+Pour deployer l'application. Il faut d'abord installer git et maven sur la machine. Puis clonner le repo git. Ensuite configurer ufw comme firewall en bloquant toutes les connexions entrantes et sortantes sauf celles pour acceder à l'application web et les services etherpad et PhpMyAdmin. Et lancer le docker compose et l'application est disponible sur la VM. je n'ai pour l'instant pas reussi à faire fonctionner en fonction des sous-domaine.  
 
 ![App Screenshot](https://github.com/thomasbalcou/TLCprojet/blob/main/captureVM.png)
 
